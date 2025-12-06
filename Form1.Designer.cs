@@ -21,6 +21,7 @@
             btnOdalar = new Button();
             btnYeniMisafir = new Button();
             panelMain = new Panel();
+            lblOdaDurumu = new Label();
             dtpCikisTarihi = new DateTimePicker();
             label6 = new Label();
             btnKaydet = new Button();
@@ -33,7 +34,6 @@
             txtAdi = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            lblOdaDurumu = new Label();
             panelMenu.SuspendLayout();
             panelMain.SuspendLayout();
             SuspendLayout();
@@ -137,6 +137,14 @@
             panelMain.Size = new Size(676, 519);
             panelMain.TabIndex = 1;
             // 
+            // lblOdaDurumu
+            // 
+            lblOdaDurumu.AutoSize = true;
+            lblOdaDurumu.Location = new Point(484, 273);
+            lblOdaDurumu.Name = "lblOdaDurumu";
+            lblOdaDurumu.Size = new Size(0, 15);
+            lblOdaDurumu.TabIndex = 12;
+            // 
             // dtpCikisTarihi
             // 
             dtpCikisTarihi.Font = new Font("Segoe UI", 9.75F);
@@ -222,6 +230,7 @@
             txtSoyadi.Name = "txtSoyadi";
             txtSoyadi.Size = new Size(356, 25);
             txtSoyadi.TabIndex = 4;
+            txtSoyadi.KeyPress += txtSoyadi_KeyPress;
             // 
             // label3
             // 
@@ -242,6 +251,7 @@
             txtAdi.Name = "txtAdi";
             txtAdi.Size = new Size(356, 25);
             txtAdi.TabIndex = 2;
+            txtAdi.KeyPress += txtAdi_KeyPress;
             // 
             // label2
             // 
@@ -266,18 +276,11 @@
             label1.TabIndex = 0;
             label1.Text = "Yeni Misafir Kaydı";
             // 
-            // lblOdaDurumu
-            // 
-            lblOdaDurumu.AutoSize = true;
-            lblOdaDurumu.Location = new Point(484, 273);
-            lblOdaDurumu.Name = "lblOdaDurumu";
-            lblOdaDurumu.Size = new Size(0, 15);
-            lblOdaDurumu.TabIndex = 12;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             ClientSize = new Size(933, 519);
             Controls.Add(panelMain);
             Controls.Add(panelMenu);
@@ -293,7 +296,7 @@
 
         }
 
-        
+
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button btnYeniMisafir;
         private System.Windows.Forms.Button btnOdalar;

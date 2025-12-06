@@ -33,6 +33,8 @@
             // 
             dgvDoluOdalar.AllowUserToAddRows = false;
             dgvDoluOdalar.AllowUserToDeleteRows = false;
+            dgvDoluOdalar.AllowUserToResizeColumns = false;
+            dgvDoluOdalar.AllowUserToResizeRows = false;
             dgvDoluOdalar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDoluOdalar.BackgroundColor = Color.White;
             dgvDoluOdalar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -125,7 +127,7 @@
 
         }
 
-        
+
         private System.Windows.Forms.DataGridView dgvDoluOdalar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn OdaNo;

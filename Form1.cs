@@ -15,7 +15,7 @@ namespace MainForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
             string connectionString = "Server=VDSIPADRESI;Database=DATABASEADI;Uid=KULLANICIADI;Pwd=MYSQLSIFRESI;";
 
             dbHelper = new DatabaseHelper(connectionString);
@@ -70,14 +70,14 @@ namespace MainForm
             }
         }
 
-        
+
         private void btnOdalar_Click(object sender, EventArgs e)
         {
             FormOdaYonetimi odaFormu = new FormOdaYonetimi(dbHelper);
             odaFormu.Show();
         }
 
-        
+
         private void btnOdaDurumu_Click(object sender, EventArgs e)
         {
             FormOdaDurumu durumFormu = new FormOdaDurumu(dbHelper);
@@ -86,35 +86,52 @@ namespace MainForm
 
         private void txtOdaNo_TextChanged(object sender, EventArgs e)
         {
-            
+
             if (string.IsNullOrWhiteSpace(txtOdaNo.Text))
             {
                 lblOdaDurumu.Text = "";
                 return;
             }
 
-           
+
             if (int.TryParse(txtOdaNo.Text, out int odaNo))
             {
-                
+
                 bool musaitMi = dbHelper.CheckRoomAvailability(odaNo);
 
                 if (musaitMi)
                 {
                     lblOdaDurumu.Text = "✓ Oda Boş (Müsait)";
-                    lblOdaDurumu.ForeColor = Color.Green; 
+                    lblOdaDurumu.ForeColor = Color.Green;
                 }
                 else
                 {
                     lblOdaDurumu.Text = "X Oda Dolu!";
-                    lblOdaDurumu.ForeColor = Color.Red; 
+                    lblOdaDurumu.ForeColor = Color.Red;
                 }
             }
             else
             {
-                
+
                 lblOdaDurumu.Text = "Lütfen sadece sayı girin";
                 lblOdaDurumu.ForeColor = Color.Orange;
+            }
+        }
+
+        private void txtAdi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSoyadi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }
