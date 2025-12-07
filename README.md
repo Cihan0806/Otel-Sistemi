@@ -32,7 +32,7 @@ Bu projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımlar�
 
 1.  Projeyi klonlayın:
     ```bash
-    git clone [https://github.com/KullaniciAdin/OtelOtomasyonu.git](https://github.com/KullaniciAdin/OtelOtomasyonu.git)
+    git clone https://github.com/Cihan0806/Otel-Sistemi.git
     ```
 2.  Visual Studio 2022 ile `MainForm.sln` dosyasını açın.
 3.  **ÖNEMLİ:** Güvenlik nedeniyle veritabanı şifresi koddan çıkarılmıştır. `Form1.cs` dosyasını açın ve `connectionString` satırına kendi MySQL şifrenizi girin:
